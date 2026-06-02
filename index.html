@@ -8,7 +8,7 @@ async function go() {
   const tech = params.get("tech") || "";
 
   try {
-    // ✅ 等待 API 完成
+    // ✅ 等 API 執行完成
     await fetch("https://qrscan-api-89398405-byfncsbhcmbgh0fs.southeastasia-01.azurewebsites.net/api/logScan", {
       method: "POST",
       headers: {
@@ -19,10 +19,10 @@ async function go() {
       })
     });
   } catch (e) {
-    console.log("API error", e);
+    console.log("API error:", e);
   }
 
-  // ✅ 一定跳轉
+  // ✅ 確保一定會跳轉
   window.location.replace(
     "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=ebeab0eao0uFnO1_Q7xCWJx1Y6O9MWVNrlmIbG-5ZSFUNkpGM1M1U1FEWFE1WlJFMExWQkwxT0dZVC4u&r54d47f4d0a5848dabd23be3981b2bcc1=" + tech
   );
