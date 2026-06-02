@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
 <script>
 const params = new URLSearchParams(window.location.search);
 const tech = params.get("tech") || "";
 
-// ✅ 呼叫 Azure Function（記錄掃描）
-fetch("https://qrscan-api-89398405-byfncsbhcmbgh0fs.southeastasia-01.azurewebsites.net/api/logScan, {
+// ✅ 呼叫 Azure Function（無 key）
+fetch("https://qrscan-api-89398405-byfncsbhcmbgh0fs.southeastasia-01.azurewebsites.net/api/logScan", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -17,13 +13,8 @@ fetch("https://qrscan-api-89398405-byfncsbhcmbgh0fs.southeastasia-01.azurewebsit
   })
 });
 
-// ✅ 跳轉 Forms（正確欄位ID）
+// ✅ 跳轉 Forms
 window.location.replace(
 "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=ebeab0eao0uFnO1_Q7xCWJx1Y6O9MWVNrlmIbG-5ZSFUNkpGM1M1U1FEWFE1WlJFMExWQkwxT0dZVC4u&r54d47f4d0a5848dabd23be3981b2bcc1=" + tech
 );
 </script>
-</head>
-<body>
-Redirecting...
-</body>
-</html>
